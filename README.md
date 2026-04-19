@@ -1,0 +1,2 @@
+# DataWizard-AI-Powered-Data-Analysis-Agent-LangChain-GPT-4o-
+Built a conversational AI agent that enables non-technical users to perform data science through natural language. The agent uses LangChain tools to list datasets, load and cache CSVs, generate summaries, and automatically train classification or regression models using scikit-learn. Powered by a ReAct-style AgentExecutor that reasons step-by-step 
