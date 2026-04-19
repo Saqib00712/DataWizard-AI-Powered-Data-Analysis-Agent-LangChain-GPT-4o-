@@ -1,18 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# <p style="text-align:center">
-#     <a href="https://skills.network" target="_blank">
-#     <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/assets/logos/SN_web_lightmode.png" width="200" alt="Skills Network Logo"  />
-#     </a>
-# </p>
-# 
-
-# # **Use Natural Language to Create Charts and Graphs**
 # ## **Build Your Own Data Visualization Agent**
 # 
 
-# Estimated time needed: **30** minutes
+
 # 
 
 # ## Overview
@@ -33,42 +23,6 @@
 # ---------
 # 
 
-# ## __Table of contents__
-# 
-# <ol>
-#     <li><a href="#Overview">Overview</a></li>
-#     <li><a href="#Objectives">Objectives</a></li>
-#     <li>
-#         <a href="#Setup">Setup</a>
-#         <ol>
-#             <li><a href="#Installing-required-libraries">Installing required libraries</a></li>
-#             <li><a href="#Importing-required-libraries">Importing required libraries</a></li>
-#         </ol>
-#     </li>
-#     <li>
-#         <a href="#Data-set">Data set</a>
-#         <ol>
-#             <li><a href="#Load-the-data-set">Load the data set</a></li>
-#         </ol>
-#     </li>
-#     <li>
-#         <a href="#Load-LLM">Load LLM</a>
-#         <ol>
-#             <li><a href="#Talk-to-your-data">Talk to your data</a></li>
-#             <li><a href="#Plot-your-data-with-natural-language">Plot your data with natural language</a></li>
-#         </ol>
-#     </li>
-# </ol>
-# 
-# <a href="#Exercises">Exercises</a>
-# <ol>
-#     <li><a href="#Exercise-1---Relationship-between-parental-education-level-and-student-grades">Exercise 1. Relationship between parental education level and student grades</a></li>
-#     <li><a href="#Exercise-2---Impact-of-internet-access-at-home-on-grades">Exercise 2. Impact of internet access at home on grades</a></li>
-#     <li><a href="#Exercise-3---Explore-LLM's-code">Exercise 3. Explore LLM's code</a></li>
-# </ol>
-# 
-
-# ## Objectives
 # 
 # 
 # After completing the project, you should be able to:
@@ -444,130 +398,6 @@ response = agent.invoke("Generate scatter plots to examine the correlation betwe
 print(response['intermediate_steps'][-1][0].tool_input.replace('; ', '\n'))
 
 
-# # Exercises
-# 
-
-# ### Exercise 1 - Relationship between parental education level and student grades
-# 
-
-# In[33]:
-
-
-# your code here
-response = agent.invoke(
-    "Generate scatter plots showing the relationship between "
-    "'Medu' (mother's education level) and 'G3' (final grade), "
-    "and between 'Fedu' (father's education level) and 'G3'. "
-    
-)
-
-
-# <details>
-#     <summary>Click here for Solution</summary>
-# 
-# ```python
-# 
-# response = agent.invoke(
-#     "Generate scatter plots showing the relationship between "
-#     "'Medu' (mother's education level) and 'G3' (final grade), "
-#     "and between 'Fedu' (father's education level) and 'G3'. "
-#     
-# )
-# 
-# ```
-# 
-# </details>
-# 
-
-# ### Exercise 2 - Impact of internet access at home on grades
-# 
-
-# In[34]:
-
-
-# your code here
-
-response = agent.invoke("Use bar plots to compare the average final grades ('G3') of students with internet access at home versus those without ('internet' column).")
-
-
-# <details>
-#     <summary>Click here for a solution</summary>
-#     
-# ```python
-# 
-# response = agent.invoke("Use bar plots to compare the average final grades ('G3') of students with internet access at home versus those without ('internet' column).")
-# 
-# ```
-# 
-# </details>
-# 
-
-# ### Exercise 3 - Explore LLM's code
-# 
-
-# In[36]:
-
-
-response = agent.invoke("Plot a scatter plot showing the correlation between the number of absences ('absences') and final grades ('G3') of students.")
-
-for i in range(len(response['intermediate_steps'])):
-    print(response['intermediate_steps'][i][0].tool_input.replace(';', '\n'))
-
-
-# Can you find what code the model used to generate the plot for exploring the relationship between absences and academic performance?
-# 
-# You could run the corresponding code and from the response chain, you could see the code used from charting.
-# 
-
-# In[ ]:
 
 
 
-
-
-# <details>
-#     <summary>Click here for a solution</summary>
-#     
-# ```python
-# 
-# response = agent.invoke("Plot a scatter plot showing the correlation between the number of absences ('absences') and final grades ('G3') of students.")
-# 
-# for i in range(len(response['intermediate_steps'])):
-#     print(response['intermediate_steps'][i][0].tool_input.replace(';', '\n'))
-# 
-# ```
-# 
-# </details>
-# 
-
-# ## Authors
-# 
-
-# [Kang Wang](https://author.skills.network/instructors/kang_wang)
-# 
-# Kang Wang is a Data Scientist in IBM. He is also a PhD Candidate in the University of Waterloo.
-# 
-
-# [Wojciech Fulmyk](https://author.skills.network/instructors/wojciech_fulmyk) <br>
-# Wojciech "Victor" Fulmyk is a Data Scientist at IBM. He is also a PhD Candidate in Economics in the University of Calgary.
-# 
-
-# ## Other contributors
-# 
-
-# [Ricky Shi](https://author.skills.network/instructors/ricky_shi) <br>
-# Ricky Shi is a data scientist at the Ecosystems Skills Network at IBM.
-# 
-
-# <!--## Change Log--!>
-# 
-
-# <!--|Date (YYYY-MM-DD)|Version|Changed By|Change Description|
-# |-|-|-|-|
-# |2024-05-10|0.2|Kang Wang & Wojciech Fulmyk|Initial version created|
-# |2024-02-23|0.1|Elio Di Nino|Update library documentation|--!>
-# 
-# 
-
-# ## Copyright © IBM Corporation. All rights reserved.
-# 
