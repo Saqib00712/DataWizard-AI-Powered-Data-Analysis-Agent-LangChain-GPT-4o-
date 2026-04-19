@@ -1,0 +1,8 @@
+ibm-watsonx-ai==0.2.6
+langchain==0.1.16
+langchain-ibm==0.1.4
+langchain-experimental==0.0.57
+matplotlib==3.8.4
+seaborn==0.13.2
+pandas
+jupyter
